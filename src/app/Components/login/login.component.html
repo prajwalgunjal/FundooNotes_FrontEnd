@@ -10,16 +10,16 @@
     </h1>
       <h2>Sign in</h2>
       <p>Use your Google Account<p>
-      <form [formGroup]="loginPage" ngSubmit="onSubmit()">
+      <form [formGroup]="loginPage" (ngSubmit)= "loginSubmit()">
           <div class="input-fields">
               <mat-form-field appearance="outline">
                 <mat-label>Email or phone</mat-label>
-                <input matInput placeholder="Email Or PhoneNumber" formControlName="Email">
+                <input matInput placeholder="Email Or PhoneNumber" formControlName="email">
                 <mat-error>Email is required</mat-error>
               </mat-form-field>
               <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Password" formControlName = "Password">
+                <input matInput placeholder="Password" formControlName = "password">
                 <mat-error>Password is required</mat-error>
 
               </mat-form-field>

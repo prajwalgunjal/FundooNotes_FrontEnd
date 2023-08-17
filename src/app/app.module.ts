@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,13 +10,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { ForgetPasswordComponent } from './Components/forget-password/forget-password.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './Components/home/home.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,9 @@ import { ForgetPasswordComponent } from './Components/forget-password/forget-pas
     MatFormFieldModule,
     FormsModule,ReactiveFormsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class HttpsService {
 
   constructor(private http:HttpClient) { }
-  PostService(url:string,payload :any,token : boolean=false,httpOptions:any{}){
+  PostService(url:string,payload :any,token : boolean=false,httpOptions:any={}){
     return this.http.post(url,payload,token && httpOptions)
   }
 
-  putService(url:string ,reqData:any,token: boolean=true,httpOptions:any{}){
+  putService(url:string ,reqData:any,token: boolean=true,httpOptions:any={}){
     return this.http.put(url,reqData,token && httpOptions)
   }
 
-  GetService (url:string ,reqData:boolean=true,httpOptions:any){
-    return this.http.get(url,reqData && httpOptions)
+  GetService (url:any ,token:boolean=true,httpOptions:any){
+    return this.http.get(url,token && httpOptions)
   }
 
-  DeleteService (url:string ,token:boolean=true,httpOptions:any)
+  DeleteService (url:any ,token:boolean=true,httpOptions:any)
   {
     return this.http.delete(url,token && httpOptions)
   }

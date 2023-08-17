@@ -9,19 +9,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ForgetPasswordComponent implements OnInit {
   forgetPage! :FormGroup;
   constructor(private formBuilder: FormBuilder) { 
-    this.myForm()
+    this.ngOnInit()
   }
 
   ngOnInit(): void {
-    
-  }
-
-  myForm(){
     this.forgetPage = this.formBuilder.group({
       Password: ['', [Validators.required, Validators.minLength(8)]],
       Confirm_Password : ['',[Validators.required,Validators.minLength(8)]]
     })
-  } 
+  }
 
   onSubmit(){
      
