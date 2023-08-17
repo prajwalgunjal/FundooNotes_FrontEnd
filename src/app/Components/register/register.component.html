@@ -1,1 +1,77 @@
-<p>register works!</p>
+<body>
+    <div class="container">
+        <div class="content">
+      <h1 class="custome">
+        <span class="blue">G</span>
+        <span class="red">o</span>
+        <span class="orange">o</span>
+        <span class="blue">g</span>
+        <span class="red">l</span>
+        <span class="green">e</span>
+      </h1>
+        <h2>Create your Google Account</h2>
+        <form [formGroup] = "registerPage" ngSubmit="onSubmit()">
+            <div class="input-fields">
+                <mat-form-field appearance="outline">
+                  <mat-label>First name</mat-label>
+                  <input matInput placeholder="First name" formControlName="FirstName">
+                <mat-error>FirstName is required</mat-error>
+                </mat-form-field>
+                <mat-form-field style="margin-left: 3%;" appearance="outline">
+                  <mat-label>Last name</mat-label>
+                  <input matInput placeholder="Last name" formControlName="LastName">
+                <mat-error>LastName is required</mat-error>
+
+                </mat-form-field>
+                
+            </div>
+            <div class="input-fields">
+                <mat-form-field appearance="outline">
+                    <mat-label>User name</mat-label>
+                    <input matInput placeholder="Username"formControlName="Email">
+                <mat-error>Email is required</mat-error>
+
+                </mat-form-field>
+            </div>
+            <div class="guest-mode ">
+                <p style="margin-bottom: 3%;">You can use letter's , numbers & periods</p>
+                <a routerLink="/#">Use my current email Address insted </a>
+            </div>
+
+            <div class="input-fields">
+                <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="Password" formControlName="Password">
+                <mat-error>Password is required</mat-error>
+
+                </mat-form-field>
+                <mat-form-field style="margin-left: 3%;" appearance="outline">
+                  <mat-label >Confirm</mat-label>
+                  <input matInput placeholder="Confirm" formControlName="ConfirmPassword">
+                <mat-error>ConfirmPassword is required</mat-error>
+
+                </mat-form-field>
+            </div>
+            <div class="guest-mode">
+                <p>Use 8 or more characters with a mix of letters, numbers & symbols</p>                    
+            </div>
+            <div class="buttons">
+                <a routerLink="/Login">Sign in instead</a>
+                <button mat-raised-button color="primary">Next</button>
+            </div>
+        </form>
+        <div class="footer" >
+          <a routerLink="/#">Help</a>
+          <a routerLink="/#">Privacy</a>
+          <a routerLink="/#">Terms</a>
+      </div>
+      <div class="footer_Lang">
+        <a routerLink="/#">English(UK)</a>
+      </div> 
+      </div>
+      <div class="image-container">
+        <img src="../../../assets/google.png" alt="Google">
+      </div>
+    </div>
+</body>
+    

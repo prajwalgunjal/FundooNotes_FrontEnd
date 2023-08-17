@@ -1,27 +1,48 @@
 <body>
-    
-<div class="container">
-    <h1 class="custome">FundooNotes</h1>
-    <h2>Welcome</h2>
-    <h1>Signin With Your Login ID and Password</h1>
-    <form>
-        <p>
-            <mat-form-field appearance="outline">
-              <mat-label>Email</mat-label>
-              <input matInput placeholder="Email Or PhoneNumber">
-            </mat-form-field>
-          </p>
-          <p>
-            <mat-form-field appearance="outline">
-              <mat-label>Password</mat-label>
-              <input matInput placeholder="Password">
-            </mat-form-field>
-          </p>
-    </form>
-    <div>
-    <button mat-raised-button color="primary">Login</button>
-    <button mat-raised-button color="primary">Resigter</button>
-    </div>
-</div>
+  <div class="container">
+    <h1 class="custome">
+      <span class="blue">G</span>
+      <span class="red">o</span>
+      <span class="orange">o</span>
+      <span class="blue">g</span>
+      <span class="red">l</span>
+      <span class="green">e</span>
+    </h1>
+      <h2>Sign in</h2>
+      <p>Use your Google Account<p>
+      <form [formGroup]="loginPage" ngSubmit="onSubmit()">
+          <div class="input-fields">
+              <mat-form-field appearance="outline">
+                <mat-label>Email or phone</mat-label>
+                <input matInput placeholder="Email Or PhoneNumber" formControlName="Email">
+                <mat-error>Email is required</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" formControlName = "Password">
+                <mat-error>Password is required</mat-error>
 
+              </mat-form-field>
+          </div>
+          <div class="forgot-email">
+              <a routerLink="/ForgetPassword">Forget Password?</a>
+          </div>
+          <div class="guest-mode">
+              <p>Not your Computer? Use Guest mode to sign in privately</p>
+              <a routerLink="/#">Learn More</a>
+          </div>
+          <div class="buttons">
+              <a routerLink="/Register">Create Account</a>
+              <button mat-raised-button color="primary">Login</button>
+          </div>
+      </form>
+  </div>
+  <div class="footer" >
+    <a routerLink="/#">Help</a>
+    <a routerLink="/#">Privacy</a>
+    <a routerLink="/#">Terms</a>
+</div>
+<div class="footer_Lang">
+  <a routerLink="/#">English(UK)</a>
+</div>
 </body>
