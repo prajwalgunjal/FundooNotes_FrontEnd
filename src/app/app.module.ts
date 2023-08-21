@@ -16,6 +16,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule} from '@angular/material/list';
+import { HttpsService } from './Services/https/https.service';
+import { MatCardModule } from '@angular/material/card';
+import { NoteComponent } from './Components/note/note.component';
+import { NoteToolIconComponent } from './Components/note-tool-icon/note-tool-icon.component';
+import { UndoRedoComponent } from './Components/undo-redo/undo-redo.component';
+import { DisplayNotesComponent } from './display-notes/display-notes.component';
+import { GetnotesComponent } from './getnotes/getnotes.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +30,12 @@ import { MatListModule} from '@angular/material/list';
     RegisterComponent,
     LoginComponent,
     ForgetPasswordComponent,
-    HomeComponent
+    HomeComponent,
+    NoteComponent,
+    NoteToolIconComponent,
+    UndoRedoComponent,
+    DisplayNotesComponent,
+    GetnotesComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,11 +49,11 @@ import { MatListModule} from '@angular/material/list';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
-
-
+    MatListModule,
+    MatCardModule,
+    MatCardModule
   ],
-  providers: [],
+  providers: [HttpsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

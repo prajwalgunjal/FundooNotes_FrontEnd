@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class HttpsService {
 
   constructor(private http:HttpClient) { }
-  PostService(url:string,payload :any,token : boolean=false,httpOptions:any={}){
-    return this.http.post(url,payload,token && httpOptions)
+
+  PostService(url:string , paylode:any ,token:boolean = false, httpOption: any={}){
+    return this.http.post(url,paylode,token && httpOption)
   }
 
-  putService(url:string ,reqData:any,token: boolean=true,httpOptions:any={}){
-    return this.http.put(url,reqData,token && httpOptions)
+  putService(url:string , reqData:any ,token:boolean=true, httpOption:any ={}){
+    return this.http.put(url,reqData,token && httpOption)
   }
 
-  GetService (url:any ,token:boolean=true,httpOptions:any){
-    return this.http.get(url,token && httpOptions)
+  GetService(url:any, token: boolean=true , httpOption: any){
+    return this.http.get(url,token && httpOption)
   }
-
-  DeleteService (url:any ,token:boolean=true,httpOptions:any)
-  {
-    return this.http.delete(url,token && httpOptions)
+  DeleteService(url:any , token:boolean=true ,httpOption: any){
+    return this.http.delete(url,token&& httpOption)
   }
 }
